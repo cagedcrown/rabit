@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 	def index
 		if current_user
 			@user = current_user
+			# @user.posts.all
 		else
     	redirect_to new_user_path, notice: "Please log in"
   	end

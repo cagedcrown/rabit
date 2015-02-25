@@ -1,14 +1,15 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
+    @posts = Post.all
+    # @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
   end
 
   def show
   end
 
   def new
-    @post = Post.new
+    @posts = Post.new
   end
 
   def edit
@@ -18,18 +19,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @user = current_user
-    @post.user_name = @user.name
+    @post.username = @user.name
     if @post.save
-      redirect_to posts_path
+      redirect_to new_user_post_path(current_user.id)
     end
   end
-
-  # def vote
-  #   value = params[:type] == "up" ? 1 : -1
-  #   @post = Post.find(params[:id])
-  #   # @post.add_or_update_evaluation(:votes, value, current_user)
-  #   redirect_to :back, notice: "Thank you for voting"
-  # end
 
   def update
     respond_to do |format|
