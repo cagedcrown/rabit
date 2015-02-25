@@ -1,0 +1,19 @@
+<div id="center-new-post">
+<h1 id="add-a-post"><%= link_to "Add a Comment", new_post_path %></h1></div>
+<div class="posts-container">
+
+	<h1 class="add-post">
+	</h1>
+	<% @posts.each do |post| %>
+	<div class="posts">
+		<h1><%= post.title %></h1>
+		<h3><%= post.username %></h3>
+		<p><%= post.body %></p>
+		<p><%= post.created_at %></p>
+    <p><%= post.updated_at %></p>
+		<%= link_to 'Delete', [current_user, post], confirm: "Are you sure?", method: :delete %>
+		<%= link_to 'Edit', edit_post_path(post) %>
+	</div>
+</div>
+<div class="padding"></div>
+<% end %>
