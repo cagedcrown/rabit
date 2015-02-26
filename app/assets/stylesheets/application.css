@@ -50,7 +50,6 @@ small{
 h2 {
   font-size: 2em;
   font-weight: bold;
-  padding: 1em 0;
 }
 
 footer {
@@ -61,9 +60,12 @@ footer {
   display: center;
   vertical-align: center;
   padding-top: 1em;
-  padding-bottom: 1em;
-  border-top: 6px solid #005451;
+  border-bottom: 6px solid #005451;
   font-weight: lighter;
+}
+
+.calendar {
+  padding: 2em;
 }
 
 .logo {
@@ -86,7 +88,7 @@ footer {
   font-size: 1.2em;
   line-height: 40px;
   height: 40px;
-  border-bottom: 1px solid #888;
+  border-bottom: 3px solid #005451;
 }
 
 .nav a {
@@ -94,6 +96,10 @@ footer {
   color: white;
   display: block;
   transition: .5s background-color;
+}
+
+.nav a #twitter-sign-in {
+  width: 100%;
 }
 
 .nav a:hover {
@@ -112,19 +118,20 @@ ul li
   list-style-type: none;
 }
 
-.twitter {
-  width: 3em;
-  height: auto;
+.content {
+  padding: 0 4em;
 }
 
-.wrapper {
-  min-height: 100%;
-  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
-  height: 100%;
-  margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+#twitter {
+  width: 25px;
+  height: auto;
+  top: 46px;
+  left: 837px;
+  padding: 0 .5em;
 }
-.footer, .push {
-  height: 155px; /* .push must be the same height as .footer */
+
+.nav a #twitter-sign-in {
+  width: 800px;
 }
 
 .page-header-h1 {
@@ -135,7 +142,7 @@ ul li
 
 @media screen and (min-width: 600px) {
   .nav li {
-    width: 120px;
+    width: 140px;
     border-bottom: none;
     height: 50px;
     line-height: 50px;
