@@ -9,42 +9,52 @@
 
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <span id="svg"> <%= link_to image_tag( 'logo.svg' ), root_path %></span>
-    </div>
-    <!-- 			<form class="search">
-    <input type="search" placeholder="Search A Venue" id="venue-search">
-    <input class="hide" type="submit" value="Submit">
-  </form> -->
-  <nav class="buttons">
-    <% if current_user %>
-    <a href="#"> <%= current_user.name %> </a>
-    <%= link_to "Sign out", signout_path %>
-    <% else %>
-    <%= link_to "Sign in with Twitter", "/auth/twitter?force_login=true" %>
-    <% end %>
-    <div>
-      <ul>
-        <li><a href="#">Plan</a></li>
-        <li><a href="#">Study</a></li>
-        <li><a href="#">Stats</a></li>
-        <li><a href="#">Profile</a></li>
+  <div class='wrapper'>
+    <header>
+      <div class="nav">
+        <span id="svg"> <%= link_to image_tag( 'logo.svg' ), root_path %></span>
+        <% if current_user %>
+        <ul>
+          <li><%= link_to "Notes", user_posts_path(current_user.id) %></li>
+          <li><a href="/events">Planner</a></li>
+          <li><a href="#">Study</a></li>
+          <li><a href="#">Stats</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><%= link_to "Sign out", signout_path %> </li>
+          <% else %>
+          <li><%= link_to "Sign In", "/auth/twitter?force_login=true" %></li>
+          <li><a href="/auth/twitter">Sign In<img src="/assets/twitter_white_small.svg"></li>
+        <% end %>
       </ul>
     </div>
-    <div>
-      <%= link_to "Posts", user_posts_path(current_user.id) %>
-    </div>
-  </nav>
-</header>
+  </header>
 
-<div class="content">
+  <div class="content">
 
+  </div>
+  <%= yield %>
 </div>
-<%= yield %>
-
+<footer>
+  <p>This <strong>CSS Sticky Footer</strong> simply stays put.</p>
+  <p class="copyright">Copyright &copy; 2015 Maury T. Líndo &mdash; <a href="http://ryanfait.com/" title="Las Vegas Web Design">Las Vegas Web Design</a></p>
+</footer>
 <link src="assets/js/jquery.js">
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
+
+<!-- <test>
+
+<header>
+<div class="nav">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Movies</a></li>
+<li><a href="#">Favorites</a></li>
+<li><a href="#">Sign Out</a></li>
+</ul>
+</div>
+</header>
+
+</test> -->
