@@ -13,17 +13,16 @@
     <header>
       <div class="nav">
         <span id="svg"> <%= link_to image_tag( 'logo.svg' ), root_path %></span>
-        <% if current_user %>
         <ul>
+        <% if current_user %>
           <li><%= link_to "Notes", user_posts_path(current_user.id) %></li>
           <li><a href="/events">Planner</a></li>
           <li><a href="#">Study</a></li>
           <li><a href="#">Stats</a></li>
           <li><a href="#">Profile</a></li>
-          <li><%= link_to "Sign out", signout_path %> </li>
+          <li><a href="/signout">Log Out<img id="twitter" src="/assets/twitter_icon_32.png"></a></li>
           <% else %>
-          <li><%= link_to "Sign In", "/auth/twitter?force_login=true" %></li>
-          <li><a href="/auth/twitter">Sign In<img src="/assets/twitter_white_small.svg"></li>
+          <li><a id="twitter-sign-in" href="/auth/twitter">Log In<img id="twitter" src="/assets/twitter_icon_32.png"></a></li>
             <% end %>
           </ul>
         </div>
@@ -32,16 +31,12 @@
       <div class="content">
         <%= yield %>
       </div>
-
-      <footer>
-        <p class="copyright">Copyright &copy; 2015 Maury T. Líndo &mdash; <a href="http://cagedcrown.com/" title="CagedCrown">Caged<strong>Crown</strong>.com</a></p>
-      </footer>
     </div>
     <link src="assets/js/jquery.js">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <script>
     $('#calendar').fullCalendar();
     </script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
   </html>
 
