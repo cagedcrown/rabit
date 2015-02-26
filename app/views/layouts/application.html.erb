@@ -24,35 +24,36 @@
           <% else %>
           <li><%= link_to "Sign In", "/auth/twitter?force_login=true" %></li>
           <li><a href="/auth/twitter">Sign In<img src="/assets/twitter_white_small.svg"></li>
-        <% end %>
-      </ul>
+            <% end %>
+          </ul>
+        </div>
+      </header>
+
+      <div class="content">
+        <%= yield %>
+      </div>
+
+      <footer>
+        <p class="copyright">Copyright &copy; 2015 Maury T. Líndo &mdash; <a href="http://cagedcrown.com/" title="CagedCrown">Caged<strong>Crown</strong>.com</a></p>
+      </footer>
     </div>
-  </header>
+    <link src="assets/js/jquery.js">
+    <script>
+    $('#calendar').fullCalendar();
+    </script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </body>
+  </html>
 
-  <div class="content">
+  <!-- <test>
 
-  </div>
-  <%= yield %>
-</div>
-<footer>
-  <p>This <strong>CSS Sticky Footer</strong> simply stays put.</p>
-  <p class="copyright">Copyright &copy; 2015 Maury T. Líndo &mdash; <a href="http://ryanfait.com/" title="Las Vegas Web Design">Las Vegas Web Design</a></p>
-</footer>
-<link src="assets/js/jquery.js">
-
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-</body>
-</html>
-
-<!-- <test>
-
-<header>
-<div class="nav">
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Movies</a></li>
-<li><a href="#">Favorites</a></li>
-<li><a href="#">Sign Out</a></li>
+  <header>
+  <div class="nav">
+  <ul>
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Movies</a></li>
+  <li><a href="#">Favorites</a></li>
+  <li><a href="#">Sign Out</a></li>
 </ul>
 </div>
 </header>
