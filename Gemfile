@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails_12factor'
+gem 'lazy_high_charts'
 gem 'figaro'
 gem 'omniauth-twitter'
 gem 'fullcalendar-rails'

@@ -1,21 +1,24 @@
 <h1 class="page-header-h1">Daily Notes</h1>
 
-<div id="center-new-post">
-	<h1 id="add-a-post"><%= link_to "Add a Post", new_user_post_path(current_user.id) %></h1></div>
-	<div class="posts-container">
+<div id="center-new-note">
+	<h1 class="timer-button"><%= link_to "Add A Daily Note", new_user_post_path(current_user.id) %></h1>
+</div>
+<div class="note-container">
 
-
-		<h1 class="add-post">
-		</h1>
-		<div class="posts">
-		<% @posts.each do |post| %>
+	<h1 class="note-post"></h1>
+	<% @posts.each do |post| %>
+	<div class="single-note">
+		<div class="note-image">
+		</div>
+		<div class="note-title">
 			<h1><%= post.title %></h1>
-			<h3><%= post.username %></h3>
-			<p><%= post.body %></p>
-			<p><%= post.created_at %></p>
-			<p><%= post.updated_at %></p>
-			<%= link_to 'Delete', [post.user, post], confirm: "Are you sure?", method: :delete %>
+		</div>
+		<div class="note-body">
+			<h3><%= post.body %></h3>
+		</div>
+		<div class="note-attr">
+			<h4>Created at <%= post.created_at %> <p id="note-delete"><%= link_to 'Delete', [post.user, post], confirm: "Are you sure?", method: :delete %></h4>
 		</div>
 	</div>
+	<% end %>
 </div>
-<% end %>

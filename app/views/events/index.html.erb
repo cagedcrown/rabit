@@ -1,35 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="page-header-h1">Monthly Planner</h1>
+<h1 class="timer-button"><%= link_to 'New Event', new_event_path %></h1>
 
 <div id='calendar' class="fc fc-ltr fc-unthemed"></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="event-container">
 
-  <tbody>
-    <% @events.each do |event| %>
-    <tr>
-      <td><%= event.title %></td>
-      <td><%= event.description %></td>
-      <td><%= event.start_time %></td>
-      <td><%= event.end_time %></td>
-      <td><%= link_to 'Show', event %></td>
-      <td><%= link_to 'Edit', edit_event_path(event) %></td>
-      <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+	<h1 class="event-post"></h1>
+	<% @events.each do |event| %>
+	<div class="single-event">
+		<div class="event-image">
+		</div>
+		<div class="event-title">
+			<h1><%= event.title %></h1>
+		</div>
+		<div class="event-desc">
+			<h3><%= event.description %></h3>
+		</div>
+		<div class="event-attr">
+			<h4>Starts on <%= event.start_time %> | Ends on <%= event.end_time %> <p id="event-delete"><%= link_to 'View', event %> | <%= link_to 'Edit', edit_event_path(event) %> | <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+		</div>
+	</div>
+	<% end %>
+</div>

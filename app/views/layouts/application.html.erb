@@ -12,45 +12,33 @@
   <div class='wrapper'>
     <header>
       <div class="nav">
-        <span id="svg"> <%= link_to image_tag( 'logo.svg' ), root_path %></span>
+        <span id="logo"> <%= link_to image_tag( 'rabit_logo.png' ), root_path %></span>
         <ul>
-        <% if current_user %>
+          <% if current_user %>
           <li><%= link_to "Notes", user_posts_path(current_user.id) %></li>
           <li><a href="/events">Planner</a></li>
-          <li><a href="#">Study</a></li>
-          <li><a href="#">Stats</a></li>
-          <li><a href="#">Profile</a></li>
+          <li><a href="/static_pages/study">Study</a></li>
+          <li><a href="/static_pages/profile">My Stats</a></li>
+          <li><a href="/static_pages/about">About</a></li>
           <li><a href="/signout">Log Out<img id="twitter" src="/assets/twitter_icon_32.png"></a></li>
           <% else %>
           <li><a id="twitter-sign-in" href="/auth/twitter">Log In<img id="twitter" src="/assets/twitter_icon_32.png"></a></li>
-            <% end %>
-          </ul>
-        </div>
-      </header>
-
-      <div class="content">
-        <%= yield %>
+          <% end %>
+        </ul>
       </div>
+    </header>
+
+    <div class="content">
+      <%= yield %>
     </div>
-    <link src="assets/js/jquery.js">
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <script>
-    $('#calendar').fullCalendar();
-    </script>
-  </body>
-  </html>
+  </div>
+  <link src="assets/js/jquery.js">
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-  <!-- <test>
-
-  <header>
-  <div class="nav">
-  <ul>
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Movies</a></li>
-  <li><a href="#">Favorites</a></li>
-  <li><a href="#">Sign Out</a></li>
-</ul>
-</div>
-</header>
-
-</test> -->
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
+  <script>
+  $('#calendar').fullCalendar();
+  </script>
+</body>
+</html>
