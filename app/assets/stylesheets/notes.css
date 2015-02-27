@@ -1,0 +1,39 @@
+.note-container {
+  width: 60%;
+  display: block;
+  text-align: left;
+  margin: auto;
+  padding-top: 1.5em;
+}
+
+.single-note {
+  padding-bottom: 1em;
+}
+
+.note-title {
+  text-align: center;
+  background-color: #00A39D;
+  padding: .5em 0;
+  color: white;
+  border-bottom: solid 6px #005451;
+  font-size: 1.5em;
+
+}
+
+.note-body {
+  padding: 1em 0;
+  color: white;
+  background-image: linear-gradient( #005451, black);
+}
+
+.note-attr {
+  padding: .5em 0;
+}
+
+.note-title h1, .note-body h3, .note-attr h4 {
+  padding: 0 .5em;
+}
+
+#note-delete {
+  float: right;
+}

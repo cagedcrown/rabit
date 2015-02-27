@@ -1,0 +1,33 @@
+.fadeIn {
+  padding-top: 2em;
+  width: 500px;
+  height: auto;
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  -o-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  -o-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+}
+
+.fadeIn-2s {
+  -webkit-animation-duration:2s;
+  -moz-animation-duration:2s;
+  -o-animation-duration:2s;
+  animation-duration:2s;
+}
+
+.fadeIn-Delay-2s {
+  -webkit-animation-delay:2s;
+  -moz-animation-delay:2s;
+  -o-animation-delay:2s;
+  animation-delay:2s;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-o-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }

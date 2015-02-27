@@ -64,12 +64,24 @@ footer {
   font-weight: lighter;
 }
 
+.about-container {
+  width: 50%;
+  text-align: left;
+  margin: auto;
+}
+
 .calendar {
   padding: 2em;
 }
 
-.logo {
+#logo img {
   vertical-align: center;
+  width: 100px;
+  height: auto;
+}
+
+#logo img:hover {
+  background:white;
 }
 
 .nav {
@@ -119,7 +131,7 @@ ul li
 }
 
 .content {
-  padding: 0 4em;
+  padding: 0 10%;
 }
 
 #twitter {
@@ -137,8 +149,37 @@ ul li
 .page-header-h1 {
   font-size: 3em;
   font-weight: bold;
-  padding: 1em 0;
+  padding-top: 1em;
+  padding-bottom: .5em;
 }
+
+.page-header-h3 {
+  font-size: 2em;
+}
+
+.page-header-h3-bold {
+  font-size: 2em;
+  font-weight: bold;
+  padding-top: .5em;
+}
+
+.timer-button {
+  font-size: 22px;
+  background: #005451;
+  padding: 15px 35px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.field {
+  padding-bottom: .5em;
+}
+button:hover{
+  background: #008E89;
+}
+
 
 @media screen and (min-width: 600px) {
   .nav li {

@@ -1,0 +1,40 @@
+.event-container {
+  width: 60%;
+  display: block;
+  text-align: left;
+  margin: auto;
+  padding-top: 1.5em;
+}
+
+.single-event {
+  padding-bottom: 1em;
+}
+
+.event-title {
+  text-align: center;
+  background-color: #00A39D;
+  padding: .5em 0;
+  color: white;
+  border-bottom: solid 6px #005451;
+  font-size: 1.5em;
+
+}
+
+.event-desc {
+  padding: 1em 0;
+  color: white;
+  background-image: linear-gradient( #005451, black);
+}
+
+.event-attr {
+  padding: .5em 0;
+}
+
+.event-title h1, .event-desc h3, .event-attr h4 {
+  padding: 0 .5em;
+}
+
+#event-delete {
+  float: right;
+  text-decoration: underline;
+}

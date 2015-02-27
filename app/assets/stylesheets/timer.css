@@ -3,16 +3,9 @@
   text-align: center;
 }
 
-h1 {
-  font-family: Josefin Slab;
-  font-size: 72px;
-  text-align: center;
-}
-
 button {
   background: #4479BA;
   color: #FFF;
-  font-family: Josefin Slab;
   font-size: 50px;
   text-align: center;
   border: 1px solid black;
@@ -22,6 +15,40 @@ button {
   box-shadow: 2px 2px black;
 }
 
-button:hover{
-    background: #356094;
+.timer-display {
+  font-size: 300px;
+}
+
+.timer-button {
+  font-size: 22px;
+  background: #008E89;
+  border-bottom: 6px solid #005451;
+  padding: 15px 35px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.timer-button:hover {
+  background: #00A39D;
+  border-top: 6px solid white;
+  border-bottom: none;
+}
+
+input[type="submit"] {
+  font-size: 22px;
+  background: #008E89;
+  border-bottom: 6px solid #005451;
+  padding: 15px 35px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+}
+
+input[type="submit"]:hover {
+  background: #00A39D;
+  border-top: 6px solid white;
+  border-bottom: none;
 }
